@@ -1,1 +1,1 @@
-Creating Bank application using CQRS, Event Sourcing in SpringBoot and Axon.
+-Creating Bank application using CQRS, Event Sourcing in SpringBoot and Axon.
