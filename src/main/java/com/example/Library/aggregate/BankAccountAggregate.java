@@ -23,7 +23,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Aggregate
-public class BankAccountAggregate {
+public class BankAccountAggregate {         //Aggregate- is a logical group of entities treated as a single unit
     @AggregateIdentifier
     private UUID accId;
     private String accountHolderName;
@@ -35,7 +35,7 @@ public class BankAccountAggregate {
      */
     @CommandHandler
     public BankAccountAggregate(CreateAccountCommand command) {
-        AggregateLifecycle.apply(new AccountCreatedEvent(command.getAccountId(),
+        AggregateLifecycle.apply(new AccountCreatedEvent(command.getAccountId(),        //Commandhandler would publish an event
                 command.getInitialBalance(),
                 command.getAccountHolderName()));
     }
@@ -82,6 +82,12 @@ Now, as we dispatched an Event, we need to define the EventHandler:
         }
         this.balance = this.balance.subtract(event.getDebitAmount());
     }
-
-
 }
+
+/*
+
+CommandHandler- It's a function that specifies what happens when command is executed. These are normally a void function with
+the name handle() & take command as a parameter.
+
+EventSourcingHandler - is executed when event occur.
+ */

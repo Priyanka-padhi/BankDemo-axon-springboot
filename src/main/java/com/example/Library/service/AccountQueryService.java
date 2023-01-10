@@ -19,7 +19,7 @@ import static com.example.Library.service.ServiceUtils.formatUuid;
 @AllArgsConstructor
 public class AccountQueryService {
 
-    private final QueryGateway queryGateway;
+    private final QueryGateway queryGateway;        // to dispatch query
     private final EventStore eventStore;
 
     public CompletableFuture<BankAccount> findById(String accID){

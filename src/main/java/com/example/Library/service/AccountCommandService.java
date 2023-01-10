@@ -17,7 +17,7 @@ import static com.example.Library.service.ServiceUtils.formatUuid;
 
 @Service
 @AllArgsConstructor
-public class AccountCommandService {        // will dispatch the Commands to thr Axon Engine
+public class AccountCommandService {        // will dispatch the Commands to the Axon Engine
 
     private final CommandGateway commandGateway;    // to dispatch command we have CommandGateway interface
 
